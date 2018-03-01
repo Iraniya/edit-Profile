@@ -26,7 +26,7 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 1.0
+            scrollView.minimumZoomScale = 0.5
             scrollView.maximumZoomScale = 1.5
         }
     }
@@ -51,12 +51,9 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
         let coreImage = CIImage(cgImage: croppedCGImage!)
         let ciContext = CIContext(options: nil)
         let filteredImageRef = ciContext.createCGImage(coreImage, from: coreImage.extent)
-        let imageForButton = UIImage(cgImage:filteredImageRef!, scale:imgScale!, orientation:imgOrientation!)
-        //imageView.image = imageForButton
-        //scrollView.zoomScale = 1
-        //self.cropAreaView.isHidden = true
-        
-        self.delegate.didSelectedTheImage(withImage: imageForButton)
+        let finalImage = UIImage(cgImage:filteredImageRef!, scale:imgScale!, orientation:imgOrientation!)
+    
+        self.delegate.didSelectedTheImage(withImage: finalImage)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -75,38 +72,23 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
 //        cropFilter?.setValue(coreImage, forKey: kCIInputImageKey)
         //cropFilter.setValue(Rectangle, forKey: "inputRectangle")
         
-        let filter = CIFilter(name: "CIGaussianBlur")
+        let filter = CIFilter(name: filterName)
         filter!.setValue(coreImage, forKey: kCIInputImageKey)
         filter?.setValue(40.0, forKey: kCIInputRadiusKey)
         
         
         let output = filter!.outputImage
         let cgimg = ciContext.createCGImage(output!, from: output!.extent)
-        let processedImage = UIImage(cgImage: cgimg!, scale: 0, orientation: imgOrientation)
+        let processedImage = UIImage(cgImage: cgimg!, scale: imgScale, orientation: imgOrientation)
         imageView.image = processedImage
-        
-//        let imgOrientation = orignalImage.imageOrientation
-//        let imgScale = orignalImage.scale
-//
-//        // Create filters for each button
-//
-//
-//        filter!.setDefaults()
-//
-//        let filteredImageData = filter!.value(forKey: kCIOutputImageKey) as! CIImage
-//        let filteredImageRef = ciContext.createCGImage(filteredImageData, from: filteredImageData.extent)
-//        let imageForButton = UIImage(cgImage:filteredImageRef!, scale:imgScale, orientation:imgOrientation)
-//
-//        // Assign filtered image to the button
-//        imageView.image = imageForButton
     }
     
     
-//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-//        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-//        self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, 0, 0)
-//    }
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, 0, 0)
+    }
     
     var cropArea:CGRect{
         get {
