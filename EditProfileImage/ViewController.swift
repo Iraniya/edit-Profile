@@ -84,7 +84,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         if let newImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.selectedImage = newImage
-            navigateToNextViewConteroller()
+            //navigateToNextViewController()
+            navigateToCropViewController()
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -94,10 +95,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    func navigateToNextViewConteroller() {
+    func navigateToNextViewController() {
         let cropViewControler = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CropAndFilterViewController") as! CropAndFilterViewController
         
         cropViewControler.orignalImage = self.selectedImage
+        cropViewControler.delegate = self
+        self.navigationController?.pushViewController(cropViewControler, animated: true)
+    }
+    
+    func navigateToCropViewController() {
+        let cropViewControler = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CropViewController") as! CropViewController
+        
+        cropViewControler.image = self.selectedImage
         cropViewControler.delegate = self
         self.navigationController?.pushViewController(cropViewControler, animated: true)
     }
@@ -152,6 +161,10 @@ extension ViewController: CropAndFilterViewControllerDelegate {
         print("didSelectedTheImage Image selected")
         self.imageView.image = image
     }
-    
-    
+}
+
+extension ViewController: CropViewControllerDelegate {
+    func didSelectedDoneButton(withImage image: UIImage) {
+        self.imageView.image = image
+    }
 }

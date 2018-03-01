@@ -14,6 +14,20 @@
 		1C17715520468BB100E7CD07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C17715320468BB100E7CD07 /* LaunchScreen.storyboard */; };
 		1C17715D20468CBA00E7CD07 /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C17715C20468CBA00E7CD07 /* black.jpg */; };
 		1C570A922046C18100D516AA /* CropAndFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570A912046C18100D516AA /* CropAndFilterViewController.swift */; };
+		1C570A9C204813B700D516AA /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570A9B204813B700D516AA /* CropViewController.swift */; };
+		1C570B0620483AAF00D516AA /* CGPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AF920483AAE00D516AA /* CGPointExtension.swift */; };
+		1C570B0720483AAF00D516AA /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFA20483AAE00D516AA /* CGSizeExtensions.swift */; };
+		1C570B0820483AAF00D516AA /* ImageCropperOverlayViewConfigurationEdge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFB20483AAE00D516AA /* ImageCropperOverlayViewConfigurationEdge.swift */; };
+		1C570B0920483AAF00D516AA /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFC20483AAE00D516AA /* UIImageExtensions.swift */; };
+		1C570B0A20483AAF00D516AA /* ImageCropperOverlayViewConfigurationCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFD20483AAE00D516AA /* ImageCropperOverlayViewConfigurationCorner.swift */; };
+		1C570B0B20483AAF00D516AA /* ImageCropperScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFE20483AAE00D516AA /* ImageCropperScrollView.swift */; };
+		1C570B0C20483AAF00D516AA /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570AFF20483AAE00D516AA /* CGFloatExtension.swift */; };
+		1C570B0D20483AAF00D516AA /* ImageCropperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0020483AAE00D516AA /* ImageCropperView.swift */; };
+		1C570B0E20483AAF00D516AA /* ImageCropperOverlayViewConfigurationGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0120483AAE00D516AA /* ImageCropperOverlayViewConfigurationGrid.swift */; };
+		1C570B0F20483AAF00D516AA /* ImageCropperCropViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0220483AAE00D516AA /* ImageCropperCropViewConfiguration.swift */; };
+		1C570B1020483AAF00D516AA /* ImageCropperOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0320483AAF00D516AA /* ImageCropperOverlayView.swift */; };
+		1C570B1120483AAF00D516AA /* ImageCropperCropViewTouchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0420483AAF00D516AA /* ImageCropperCropViewTouchState.swift */; };
+		1C570B1220483AAF00D516AA /* ImageCropperCropViewConfigurationOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C570B0520483AAF00D516AA /* ImageCropperCropViewConfigurationOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +40,20 @@
 		1C17715620468BB100E7CD07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C17715C20468CBA00E7CD07 /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		1C570A912046C18100D516AA /* CropAndFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropAndFilterViewController.swift; sourceTree = "<group>"; };
+		1C570A9B204813B700D516AA /* CropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
+		1C570AF920483AAE00D516AA /* CGPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtension.swift; sourceTree = "<group>"; };
+		1C570AFA20483AAE00D516AA /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
+		1C570AFB20483AAE00D516AA /* ImageCropperOverlayViewConfigurationEdge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperOverlayViewConfigurationEdge.swift; sourceTree = "<group>"; };
+		1C570AFC20483AAE00D516AA /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		1C570AFD20483AAE00D516AA /* ImageCropperOverlayViewConfigurationCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperOverlayViewConfigurationCorner.swift; sourceTree = "<group>"; };
+		1C570AFE20483AAE00D516AA /* ImageCropperScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperScrollView.swift; sourceTree = "<group>"; };
+		1C570AFF20483AAE00D516AA /* CGFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		1C570B0020483AAE00D516AA /* ImageCropperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperView.swift; sourceTree = "<group>"; };
+		1C570B0120483AAE00D516AA /* ImageCropperOverlayViewConfigurationGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperOverlayViewConfigurationGrid.swift; sourceTree = "<group>"; };
+		1C570B0220483AAE00D516AA /* ImageCropperCropViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperCropViewConfiguration.swift; sourceTree = "<group>"; };
+		1C570B0320483AAF00D516AA /* ImageCropperOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperOverlayView.swift; sourceTree = "<group>"; };
+		1C570B0420483AAF00D516AA /* ImageCropperCropViewTouchState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperCropViewTouchState.swift; sourceTree = "<group>"; };
+		1C570B0520483AAF00D516AA /* ImageCropperCropViewConfigurationOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperCropViewConfigurationOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +72,7 @@
 			children = (
 				1C17714920468BB100E7CD07 /* EditProfileImage */,
 				1C17714820468BB100E7CD07 /* Products */,
+				1C570A9D20481C0100D516AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +87,45 @@
 		1C17714920468BB100E7CD07 /* EditProfileImage */ = {
 			isa = PBXGroup;
 			children = (
+				1C570B1420483AD300D516AA /* Crop Files */,
 				1C17715C20468CBA00E7CD07 /* black.jpg */,
 				1C17714A20468BB100E7CD07 /* AppDelegate.swift */,
 				1C17714C20468BB100E7CD07 /* ViewController.swift */,
 				1C570A912046C18100D516AA /* CropAndFilterViewController.swift */,
+				1C570A9B204813B700D516AA /* CropViewController.swift */,
 				1C17714E20468BB100E7CD07 /* Main.storyboard */,
 				1C17715120468BB100E7CD07 /* Assets.xcassets */,
 				1C17715320468BB100E7CD07 /* LaunchScreen.storyboard */,
 				1C17715620468BB100E7CD07 /* Info.plist */,
 			);
 			path = EditProfileImage;
+			sourceTree = "<group>";
+		};
+		1C570A9D20481C0100D516AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C570B1420483AD300D516AA /* Crop Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C570AFF20483AAE00D516AA /* CGFloatExtension.swift */,
+				1C570AF920483AAE00D516AA /* CGPointExtension.swift */,
+				1C570AFA20483AAE00D516AA /* CGSizeExtensions.swift */,
+				1C570AFC20483AAE00D516AA /* UIImageExtensions.swift */,
+				1C570B0220483AAE00D516AA /* ImageCropperCropViewConfiguration.swift */,
+				1C570B0520483AAF00D516AA /* ImageCropperCropViewConfigurationOverlay.swift */,
+				1C570B0420483AAF00D516AA /* ImageCropperCropViewTouchState.swift */,
+				1C570B0320483AAF00D516AA /* ImageCropperOverlayView.swift */,
+				1C570AFD20483AAE00D516AA /* ImageCropperOverlayViewConfigurationCorner.swift */,
+				1C570AFB20483AAE00D516AA /* ImageCropperOverlayViewConfigurationEdge.swift */,
+				1C570B0120483AAE00D516AA /* ImageCropperOverlayViewConfigurationGrid.swift */,
+				1C570AFE20483AAE00D516AA /* ImageCropperScrollView.swift */,
+				1C570B0020483AAE00D516AA /* ImageCropperView.swift */,
+			);
+			path = "Crop Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +201,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C570B1120483AAF00D516AA /* ImageCropperCropViewTouchState.swift in Sources */,
 				1C17714D20468BB100E7CD07 /* ViewController.swift in Sources */,
+				1C570A9C204813B700D516AA /* CropViewController.swift in Sources */,
+				1C570B1220483AAF00D516AA /* ImageCropperCropViewConfigurationOverlay.swift in Sources */,
+				1C570B0D20483AAF00D516AA /* ImageCropperView.swift in Sources */,
+				1C570B0620483AAF00D516AA /* CGPointExtension.swift in Sources */,
+				1C570B0B20483AAF00D516AA /* ImageCropperScrollView.swift in Sources */,
+				1C570B0920483AAF00D516AA /* UIImageExtensions.swift in Sources */,
+				1C570B0820483AAF00D516AA /* ImageCropperOverlayViewConfigurationEdge.swift in Sources */,
 				1C17714B20468BB100E7CD07 /* AppDelegate.swift in Sources */,
+				1C570B0720483AAF00D516AA /* CGSizeExtensions.swift in Sources */,
 				1C570A922046C18100D516AA /* CropAndFilterViewController.swift in Sources */,
+				1C570B1020483AAF00D516AA /* ImageCropperOverlayView.swift in Sources */,
+				1C570B0A20483AAF00D516AA /* ImageCropperOverlayViewConfigurationCorner.swift in Sources */,
+				1C570B0F20483AAF00D516AA /* ImageCropperCropViewConfiguration.swift in Sources */,
+				1C570B0E20483AAF00D516AA /* ImageCropperOverlayViewConfigurationGrid.swift in Sources */,
+				1C570B0C20483AAF00D516AA /* CGFloatExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

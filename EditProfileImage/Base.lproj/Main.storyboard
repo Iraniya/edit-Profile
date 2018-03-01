@@ -20,21 +20,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PKp-Er-pjT">
-                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="281.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="PKp-Er-pjT" secondAttribute="height" multiplier="1:1" id="BvD-02-cqx"/>
+                                    <constraint firstAttribute="width" secondItem="PKp-Er-pjT" secondAttribute="height" multiplier="4:3" id="BvD-02-cqx"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcs-MB-z5q">
-                                <rect key="frame" x="295" y="469" width="30" height="30"/>
+                                <rect key="frame" x="295" y="375.5" width="30" height="30"/>
                                 <state key="normal" title="Edit"/>
                                 <connections>
                                     <action selector="onPressedEditButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4f-jz-fRq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHO-xn-FfV">
-                                <rect key="frame" x="50" y="469" width="34" height="30"/>
+                                <rect key="frame" x="50" y="375.5" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onPressSaveButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOP-Iy-K57"/>
@@ -77,13 +77,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA0-bg-jFA">
+                                        <rect key="frame" x="170" y="627" width="34" height="30"/>
+                                        <state key="normal" title="Crop"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="CZg-Gl-Kag" firstAttribute="centerY" secondItem="x9R-bK-fhd" secondAttribute="centerY" id="TxN-Pt-Fha"/>
                                     <constraint firstItem="CZg-Gl-Kag" firstAttribute="centerX" secondItem="x9R-bK-fhd" secondAttribute="centerX" id="aTw-Xn-Ui9"/>
+                                    <constraint firstItem="fA0-bg-jFA" firstAttribute="centerX" secondItem="x9R-bK-fhd" secondAttribute="centerX" id="cg4-gy-5qJ"/>
                                     <constraint firstAttribute="trailing" secondItem="CZg-Gl-Kag" secondAttribute="trailing" id="gXd-qB-6Fb"/>
                                     <constraint firstAttribute="bottom" secondItem="CZg-Gl-Kag" secondAttribute="bottom" id="hJi-Ho-CUK"/>
+                                    <constraint firstAttribute="bottom" secondItem="fA0-bg-jFA" secondAttribute="bottom" constant="10" id="lqv-ep-sK7"/>
                                     <constraint firstItem="CZg-Gl-Kag" firstAttribute="leading" secondItem="x9R-bK-fhd" secondAttribute="leading" id="q6K-vm-Wce"/>
                                     <constraint firstItem="CZg-Gl-Kag" firstAttribute="top" secondItem="x9R-bK-fhd" secondAttribute="top" id="zlA-GN-Us8"/>
                                 </constraints>
@@ -106,8 +112,8 @@
                                     <action selector="cropImage:" destination="KUl-sv-80p" eventType="touchUpInside" id="dEQ-M2-f9b"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Move and Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-hA-ztr">
-                                <rect key="frame" x="127" y="30" width="121" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-hA-ztr">
+                                <rect key="frame" x="187.5" y="30" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -148,6 +154,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btP-tt-7v7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="114"/>
+        </scene>
+        <!--Crop View Controller-->
+        <scene sceneID="XHy-8K-Qiz">
+            <objects>
+                <viewController storyboardIdentifier="CropViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1ib-To-C51" customClass="CropViewController" customModule="EditProfileImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yux-Zq-Xal">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIH-7C-zIF" customClass="ImageCropperView" customModule="EditProfileImage" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnN-sc-nb4">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofO-uH-s0S">
+                                        <rect key="frame" x="170" y="20" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Crop"/>
+                                        <connections>
+                                            <action selector="onPressCrop:" destination="1ib-To-C51" eventType="touchUpInside" id="JM4-CV-Tnq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugn-f7-TQc">
+                                        <rect key="frame" x="8" y="32" width="48" height="30"/>
+                                        <state key="normal" title="Cancle"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sag-qZ-N0C">
+                                        <rect key="frame" x="314" y="32" width="53" height="30"/>
+                                        <state key="normal" title="Choose"/>
+                                        <connections>
+                                            <action selector="onPressDone:" destination="1ib-To-C51" eventType="touchUpInside" id="n2S-D9-C9f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sag-qZ-N0C" secondAttribute="trailing" constant="8" id="84J-j9-c01"/>
+                                    <constraint firstItem="Ugn-f7-TQc" firstAttribute="leading" secondItem="cnN-sc-nb4" secondAttribute="leading" constant="8" id="ALV-L7-elJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="sag-qZ-N0C" secondAttribute="bottom" constant="8" id="Ngo-Op-dHd"/>
+                                    <constraint firstAttribute="height" constant="70" id="lTf-PX-zi7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ugn-f7-TQc" secondAttribute="bottom" constant="8" id="pZJ-OD-0pL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XGO-dI-jmE" firstAttribute="trailing" secondItem="cnN-sc-nb4" secondAttribute="trailing" id="21a-ad-Z1w"/>
+                            <constraint firstItem="WIH-7C-zIF" firstAttribute="top" secondItem="XGO-dI-jmE" secondAttribute="top" id="3xD-Fv-IQG"/>
+                            <constraint firstItem="WIH-7C-zIF" firstAttribute="leading" secondItem="XGO-dI-jmE" secondAttribute="leading" id="RrF-H7-kvz"/>
+                            <constraint firstItem="cnN-sc-nb4" firstAttribute="leading" secondItem="XGO-dI-jmE" secondAttribute="leading" id="jjt-1j-CxJ"/>
+                            <constraint firstItem="cnN-sc-nb4" firstAttribute="bottom" secondItem="XGO-dI-jmE" secondAttribute="bottom" id="nds-Qj-q15"/>
+                            <constraint firstItem="cnN-sc-nb4" firstAttribute="top" secondItem="WIH-7C-zIF" secondAttribute="bottom" id="rnl-Ox-ZLv"/>
+                            <constraint firstItem="XGO-dI-jmE" firstAttribute="trailing" secondItem="WIH-7C-zIF" secondAttribute="trailing" id="uh5-1c-CzE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XGO-dI-jmE"/>
+                    </view>
+                    <connections>
+                        <outlet property="cropViewStoryboard" destination="WIH-7C-zIF" id="5Zf-Fd-3j5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLF-G8-YkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.4000000000001" y="112.89355322338831"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R8Z-ad-Pn3">

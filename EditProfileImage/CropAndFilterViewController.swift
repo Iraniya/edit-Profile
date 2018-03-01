@@ -21,12 +21,17 @@ class CropAreaView: UIView {
 
 class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
     
+    
+//    private var cropView: UIView {
+//        return cropViewProgrammatically ?? cropViewStoryboard
+//    }
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cropAreaView: CropAreaView!
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 0.5
+            scrollView.minimumZoomScale = 1.0
             scrollView.maximumZoomScale = 1.5
         }
     }
@@ -37,7 +42,7 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
-        ApplyFilter(withFilter: "CIGaussianBlur")
+        //ApplyFilter(withFilter: "CIGaussianBlur")
     }
     
     @IBAction func cancleButtonPressed(_ sender: Any) {
@@ -45,16 +50,20 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func cropImage(_ sender: Any) {
-        let imgOrientation = self.imageView.image?.imageOrientation
-        let imgScale = self.imageView.image?.scale
-        let croppedCGImage = imageView.image?.cgImage?.cropping(to: cropArea)
-        let coreImage = CIImage(cgImage: croppedCGImage!)
-        let ciContext = CIContext(options: nil)
-        let filteredImageRef = ciContext.createCGImage(coreImage, from: coreImage.extent)
-        let finalImage = UIImage(cgImage:filteredImageRef!, scale:imgScale!, orientation:imgOrientation!)
-    
-        self.delegate.didSelectedTheImage(withImage: finalImage)
-        self.navigationController?.popViewController(animated: true)
+        
+        
+//        let imgOrientation = imageView.image?.imageOrientation
+//        let imgScale = imageView.image?.scale
+//        let cgImage = imageView.image?.cgImage
+//        let cropRect = cropArea
+//        let croppedCGImage = cgImage?.cropping(to: cropRect)
+//        let coreImage = CIImage(cgImage: croppedCGImage!)
+//        let ciContext = CIContext(options: nil)
+//        let filteredImage = ciContext.createCGImage(coreImage, from: coreImage.extent)
+//        let finalImage = UIImage(cgImage:filteredImage!, scale:imgScale!, orientation:imgOrientation!)
+//
+//        self.delegate.didSelectedTheImage(withImage: finalImage)
+//        self.navigationController?.popViewController(animated: true)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -84,11 +93,11 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
-        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-        self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, 0, 0)
-    }
+//    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+//        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+//        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+//        self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, 0, 0)
+//    }
     
     var cropArea:CGRect{
         get {
@@ -102,6 +111,14 @@ class CropAndFilterViewController: UIViewController, UIScrollViewDelegate {
             return CGRect(x: x, y: y, width: width, height: height)
         }
     }
+    
+//    @IBAction func showHideOverlayAction(_ sender: AnyObject) {
+//        if cropView.isOverlayViewActive {
+//            cropView.hideOverlayView(animationDuration: 0.3)
+//        } else {
+//            cropView.showOverlayView(animationDuration: 0.3)
+//        }
+//    }
 }
 
 extension UIImageView {
